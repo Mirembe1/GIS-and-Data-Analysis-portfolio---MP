@@ -1,3 +1,1 @@
-# GIS-and-Data-Analysis-portfolio---MP
-# Priscillah Mirembe
-Hydrogeologist | GIS Specialist | WASH Advocate | Data Analyst
+Highly analytical GIS Specialist and Hydrogeologist with a strong background in geodata visualization, groundwater modeling, and spatial analysis. Proficient in QGIS, Python, and Power BI. Currently expanding expertise in building automated geoscience applications and local server management. Passionate about leveraging AI and remote sensing to solve complex water resource challenges. 
