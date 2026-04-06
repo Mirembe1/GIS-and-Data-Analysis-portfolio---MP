@@ -1,2 +1,3 @@
 # GIS-and-Data-Analysis-portfolio---MP
-Professional portfolio for hydrogeology, GIS, and data analysis work
+# Priscillah Mirembe
+Hydrogeologist | GIS Specialist | WASH Advocate | Data Analyst
