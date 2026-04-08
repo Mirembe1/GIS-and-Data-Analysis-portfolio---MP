@@ -1,4 +1,30 @@
-TEL: 256702913028
-     256786913028
+Welcome to my portfolio. 
+# Priscillah Mirembe
 
-Email: mipriscillah@gmail.com
+Hydrogeologist | GIS Specialist | WASH Advocate | Data Analyst
+
+
+I specialize in groundwater exploration, GIS-based water resource analysis, and environmental data analytics using Python and Power BI.
+
+---
+
+## Skills
+
+Hydrogeology
+• Groundwater exploration
+• Aquifer characterization
+• Hydropower site assessment
+
+GIS
+• QGIS
+• Spatial analysis
+• Remote sensing
+
+Data Analytics 
+• Python
+• Pandas
+• Power BI
+
+WASH
+• Water infrastructure mapping
+• Water access analysis
