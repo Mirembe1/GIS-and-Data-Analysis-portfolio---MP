@@ -30,7 +30,7 @@ WASH
 • Water access analysis
 
 ---
-#projects
+#projects |
 GIS $ Dashboards
 ![Figure 2-2 Model Mesh](https://github.com/user-attachments/assets/0322b1b0-77c9-4a55-b6ca-2a0b257f0042)
 ![Figure 2-5 Model Boundary Conditions](https://github.com/user-attachments/assets/1c819547-64a3-4af3-913a-e09b99ff2837)
@@ -43,11 +43,13 @@ GIS $ Dashboards
 ![PM 2 5 lot 5 New](https://github.com/user-attachments/assets/216511ab-b3f5-4db3-ab6d-d1bb03f9d775)
 ![Noise Lot5](https://github.com/user-attachments/assets/12cebff7-46b3-4b79-b628-9fc1a23[Headrace Design Tool- DASHBOARD.xlsx](https://github.com/user-attachments/files/26559973/Headrace.Design.Tool-.DASHBOARD.xlsx)
 7ad7b)
-<img width="3507" height="2480" alt="HPP - map png" src="https://github.com/user-attachments/assets/12996761-7a8f-41bc-a1b5-da770d8747df" />
+<"https://github.com/user-attachments/assets/12996761-7a8f-41bc-a1b5-da770d8747df" />
+![new](https://github.com/user-attachments/assets/21153638-aea5-4b70-bbd6-b0606d03857f)
 
 ---
 Contacts:
-Tel: 256702913028
-     256786913028
+Tel: 256702913028,
+
+     256786913028|
 Email: mipriscillah@gmail.com
 
