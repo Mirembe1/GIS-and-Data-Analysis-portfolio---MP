@@ -41,10 +41,10 @@ GIS $ Dashboards
 
 ![Mpanga proj 002](https://github.com/user-attachments/assets/2c482792-e0b6-42e1-ba05-9aca6c99d4c8)
 ![PM 2 5 lot 5 New](https://github.com/user-attachments/assets/216511ab-b3f5-4db3-ab6d-d1bb03f9d775)
-![Noise Lot5](https://github.com/user-attachments/assets/12cebff7-46b3-4b79-b628-9fc1a23[Headrace Design Tool- DASHBOARD.xlsx](https://github.com/user-attachments/files/26559973/Headrace.Design.Tool-.DASHBOARD.xlsx)
+![Noise Lot5]
+!(https://github.com/user-attachments/assets/12cebff7-46b3-4b79-b628-9fc1a23[Headrace Design Tool- DASHBOARD.xlsx](https://github.com/user-attachments/files/26559973/Headrace.Design.Tool-.DASHBOARD.xlsx)
 7ad7b)
-<"https://github.com/user-attachments/assets/12996761-7a8f-41bc-a1b5-da770d8747df" />
-![new](https://github.com/user-attachments/assets/21153638-aea5-4b70-bbd6-b0606d03857f)
+<img width="860" height="609" alt="small HPP LOCATIONS" src="https://github.com/user-attachments/assets/e21aebb9-df6b-4731-a74d-04dac884d736" />
 
 ---
 Contacts:
