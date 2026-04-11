@@ -45,6 +45,11 @@ GIS $ Dashboards
 !(https://github.com/user-attachments/assets/12cebff7-46b3-4b79-b628-9fc1a23[Headrace Design Tool- DASHBOARD.xlsx](https://github.com/user-attachments/files/26559973/Headrace.Design.Tool-.DASHBOARD.xlsx)
 7ad7b)
 <img width="860" height="609" alt="small HPP LOCATIONS" src="https://github.com/user-attachments/assets/e21aebb9-df6b-4731-a74d-04dac884d736" />
+![WhatsApp Image 2026-04-11 at 16 56 09](https://github.com/user-attachments/assets/bfbd4b76-cc97-42d2-a444-466af4c545cb)
+![WhatsApp Image 2026-04-11 at 16 56 10](https://github.com/user-attachments/assets/b8cf42f5-0b39-403a-801e-055e61b35cf5)
+![WhatsApp Image 2026-04-11 at 16 56 10 (1)](https://github.com/user-attachments/assets/67410da0-4193-4a1e-b4e3-31b8dda3d6ee)
+
+<img width="1920" height="1080" alt="Screenshot (70)" src="https://github.com/user-attachments/assets/936f045a-5d89-4583-975f-f679c6a5f8f2" />
 
 ---
 Contacts:
