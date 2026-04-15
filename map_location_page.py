@@ -1,11 +1,26 @@
 import json
+import re
 import sqlite3
 from uuid import uuid4
 
 import pandas as pd
 
 
+def _safe_identifier(name):
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", name):
+        raise ValueError(f"Invalid SQL identifier: {name}")
+    return name
+
+
+def _resolve_page_decorator():
+    try:
+        return App.page
+    except NameError:
+        return lambda func: func
+
+
 def data_to_sqlite(db_fpath, table_name, data):
+    table_name = _safe_identifier(table_name)
     df = pd.DataFrame(data)
     df["created_at"] = pd.Timestamp.now()
     conn = sqlite3.connect(db_fpath)
@@ -16,6 +31,7 @@ def data_to_sqlite(db_fpath, table_name, data):
 
 
 def data_from_sqlite(db_fpath, table_name):
+    table_name = _safe_identifier(table_name)
     if not db_fpath.exists():
         return []
     conn = sqlite3.connect(db_fpath)
@@ -42,7 +58,7 @@ def reactive_table(lib, row_data=None):
     )
 
 
-@App.page
+@_resolve_page_decorator()
 def map_location(lib):
     displayed_data, set_displayed_data = lib.hooks.use_state([])
     submit_success, set_submit_success = lib.hooks.use_state(None)
@@ -96,7 +112,10 @@ def map_location(lib):
 
     color, set_color = lib.hooks.use_state("#100a0a")
     width, set_width = lib.hooks.use_state(4)
-    submit_handler = event(handle_submit, prevent_default=True, stop_propagation=True) if "event" in globals() else handle_submit
+    try:
+        submit_handler = event(handle_submit, prevent_default=True, stop_propagation=True)
+    except NameError:
+        submit_handler = handle_submit
 
     return lib.tabs.Tabs(
         lib.tabs.TabList(lib.tabs.Tab("Location Map"), lib.tabs.Tab("Add Data"), lib.tabs.Tab("View Data")),
