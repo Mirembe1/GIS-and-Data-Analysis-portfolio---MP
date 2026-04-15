@@ -34,6 +34,7 @@ def data_from_sqlite(db_fpath, table_name):
         return []
     conn = sqlite3.connect(db_fpath)
     try:
+        # Safe because table_name is strictly validated by _safe_identifier.
         query = f'SELECT * FROM "{table_name}"'
         return pd.read_sql_query(query, conn).to_dict("records")
     except Exception:
