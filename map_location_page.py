@@ -13,10 +13,8 @@ def _safe_identifier(name):
 
 
 def _resolve_page_decorator():
-    try:
-        return App.page
-    except NameError:
-        return lambda func: func
+    app_obj = globals().get("App")
+    return app_obj.page if app_obj and hasattr(app_obj, "page") else (lambda func: func)
 
 
 def data_to_sqlite(db_fpath, table_name, data):
@@ -36,7 +34,8 @@ def data_from_sqlite(db_fpath, table_name):
         return []
     conn = sqlite3.connect(db_fpath)
     try:
-        return pd.read_sql_query(f"SELECT * FROM {table_name}", conn).to_dict("records")
+        query = f'SELECT * FROM "{table_name}"'
+        return pd.read_sql_query(query, conn).to_dict("records")
     except Exception:
         return []
     finally:
@@ -45,7 +44,8 @@ def data_from_sqlite(db_fpath, table_name):
 
 def reactive_table(lib, row_data=None):
     row_data = row_data or []
-    col_defs = [{"field": key, "filter": "agTextColumnFilter"} for key in (row_data[0].keys() if row_data else [])]
+    first_row = row_data[0] if row_data and isinstance(row_data[0], dict) else {}
+    col_defs = [{"field": key, "filter": "agTextColumnFilter"} for key in first_row.keys()]
     default_col_def = lib.Props(flex=1)
     return lib.html.div(style=lib.Style(height="500px"))(
         lib.ag.AgGridReact(
@@ -112,10 +112,12 @@ def map_location(lib):
 
     color, set_color = lib.hooks.use_state("#100a0a")
     width, set_width = lib.hooks.use_state(4)
-    try:
-        submit_handler = event(handle_submit, prevent_default=True, stop_propagation=True)
-    except NameError:
-        submit_handler = handle_submit
+    event_fn = globals().get("event")
+    submit_handler = (
+        event_fn(handle_submit, prevent_default=True, stop_propagation=True)
+        if callable(event_fn)
+        else handle_submit
+    )
 
     return lib.tabs.Tabs(
         lib.tabs.TabList(lib.tabs.Tab("Location Map"), lib.tabs.Tab("Add Data"), lib.tabs.Tab("View Data")),
@@ -169,11 +171,7 @@ def map_location(lib):
                     disabled=not db_fpath.exists(),
                     onClick=lambda _: set_displayed_data(data_from_sqlite(db_fpath, table_name)),
                 )(f"{'Load' if not displayed_data else 'Reload'} Data from SQLite Database"),
-                lib.html.div(
-                    lib.html.pre(json.dumps(displayed_data, indent=2))
-                    if displayed_data
-                    else lib.html.div("No data to display. Please add some data in the 'Add Data' tab and submit the form.")
-                )
+                lib.html.pre(json.dumps(displayed_data, indent=2))
                 if displayed_data
                 else lib.html.div("No data loaded yet."),
             )
