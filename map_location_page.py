@@ -45,7 +45,8 @@ def data_from_sqlite(db_fpath, table_name):
 
 def reactive_table(lib, row_data=None):
     row_data = row_data or []
-    first_row = row_data[0] if row_data and isinstance(row_data[0], dict) else {}
+    has_first_dict_row = isinstance(row_data, (list, tuple)) and len(row_data) > 0 and isinstance(row_data[0], dict)
+    first_row = row_data[0] if has_first_dict_row else {}
     col_defs = [{"field": key, "filter": "agTextColumnFilter"} for key in first_row.keys()]
     default_col_def = lib.Props(flex=1)
     return lib.html.div(style=lib.Style(height="500px"))(
@@ -54,7 +55,6 @@ def reactive_table(lib, row_data=None):
             rowData=row_data,
             columnDefs=col_defs,
             defaultColDef=default_col_def,
-            onCellDoubleClicked=lambda e: (print(e.keys()), print(e.node.id)),
         )
     )
 
