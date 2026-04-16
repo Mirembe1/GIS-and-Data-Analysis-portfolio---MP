@@ -70,15 +70,15 @@ def map_location(lib):
     table_name = "Map_Location"
 
     form_fields = [
-        [("village", "Village"), ("ves_no", "VES No."), ("map_sheet_no", "Map Sheet No."), ("Mapped_By", "Mapped By")],
+        [("village", "Village"), ("ves_no", "VES No."), ("map_sheet_no", "Map Sheet No."), ("mapped_by", "Mapped By")],
         [("parish", "Parish"), ("subcounty", "Sub-County"), ("county", "County"), ("district", "District")],
-        [("Grid_East", "Grid East"), ("Grid_North", "Grid North"), ("Altitude", "Altitude")],
-        [("village_code", "Village Code"), ("Date_of_survey", "Date of Survey"), ("Source_Name_2", "Source Name")],
-        [("Proposed_Type_of_water_source", "Proposed Type of Water Source")],
-        [("Expected_Depth_To_Rock(m)", "Expected Depth to Rock (m)"), ("Expected_Depth_To_Water(m)", "Expected Depth to Water (m)")],
-        [("Expected_Formation", "Expected Formation")],
-        [("Expected_Borehole_Depth(m)", "Expected Borehole Depth (m)"), ("Accessibility_to_site", "Accessibility to Site")],
-        [("Expected_Depth_To_Screen", "Expected Depth to Screen (m)")],
+        [("grid_east", "Grid East"), ("grid_north", "Grid North"), ("altitude", "Altitude")],
+        [("village_code", "Village Code"), ("date_of_survey", "Date of Survey"), ("source_name_2", "Source Name")],
+        [("proposed_type_of_water_source", "Proposed Type of Water Source")],
+        [("expected_depth_to_rock_m", "Expected Depth to Rock (m)"), ("expected_depth_to_water_m", "Expected Depth to Water (m)")],
+        [("expected_formation", "Expected Formation")],
+        [("expected_borehole_depth_m", "Expected Borehole Depth (m)"), ("accessibility_to_site", "Accessibility to Site")],
+        [("expected_depth_to_screen_m", "Expected Depth to Screen (m)")],
     ]
 
     form_rows = []
