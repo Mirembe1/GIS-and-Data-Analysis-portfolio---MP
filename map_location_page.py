@@ -1,4 +1,3 @@
-import json
 import re
 import sqlite3
 from uuid import uuid4
@@ -45,16 +44,24 @@ def data_from_sqlite(db_fpath, table_name):
 
 def reactive_table(lib, row_data=None):
     row_data = row_data or []
-    has_first_dict_row = isinstance(row_data, (list, tuple)) and len(row_data) > 0 and isinstance(row_data[0], dict)
-    first_row = row_data[0] if has_first_dict_row else {}
-    col_defs = [{"field": key, "filter": "agTextColumnFilter"} for key in first_row.keys()]
-    default_col_def = lib.Props(flex=1)
+    has_rows = isinstance(row_data, (list, tuple)) and len(row_data) > 0 and isinstance(row_data[0], dict)
+    first_row = row_data[0] if has_rows else {}
+
+    def _col_filter(value):
+        return "agNumberColumnFilter" if isinstance(value, (int, float)) else "agTextColumnFilter"
+
+    col_defs = [
+        {"field": key, "filter": _col_filter(val), "sortable": True, "resizable": True}
+        for key, val in first_row.items()
+    ]
+    default_col_def = lib.Props(flex=1, resizable=True, sortable=True)
     return lib.html.div(style=lib.Style(height="500px"))(
         lib.ag.AgGridReact(
-            rowId="id",
             rowData=row_data,
             columnDefs=col_defs,
             defaultColDef=default_col_def,
+            pagination=True,
+            paginationPageSize=20,
         )
     )
 
@@ -172,7 +179,7 @@ def map_location(lib):
                     disabled=not db_fpath.exists(),
                     onClick=lambda _: set_displayed_data(data_from_sqlite(db_fpath, table_name)),
                 )(f"{'Load' if not displayed_data else 'Reload'} Data from SQLite Database"),
-                lib.html.pre(json.dumps(displayed_data, indent=2))
+                reactive_table(lib, displayed_data)
                 if displayed_data
                 else lib.html.div("No data loaded yet."),
             )
